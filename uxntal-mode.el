@@ -44,10 +44,12 @@
         ("\\.[[:graph:]]*" . 'font-lock-variable-name-face)
         (",[[:graph:]]*" . 'font-lock-variable-nameype-face)
         (";[[:graph:]]*" . 'font-lock-variable-nameype-face)
+        ("\\\"[[:graph:]]*" . 'font-lock-keyword-face)
         ))
 
 (define-derived-mode uxntal-mode fundamental-mode "uxntal"
   "major mode for editing uxntal language code."
+  (setq font-lock-string-face nil) 
   (setq font-lock-defaults '(uxntal-highlights)))
 
 (add-hook 'find-file-hook
